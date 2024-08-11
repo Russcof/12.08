@@ -1,38 +1,37 @@
 package com.example.demo;
 
-import java.security.Timestamp;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
-public class User {
+public class Users {
+
     String login;
 
     String password;
 
-    LocalDateTime date;
+    String email;
 
-    public User(String login, String password, LocalDateTime date) {
+    Timestamp date;
+
+
+    public Users(String login, String password, String email, Timestamp date) {
         this.login = login;
         this.password = password;
+        this.email = email;
+        this.date = date;  }
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
         this.date = date;
-    }
-
-    public User() {
-    }
-
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "login ='" + login + '\'' +
-                ", password ='" + password + '\'' +
-                ", date =" + date +
-                '}';
     }
 
 
     public String getLogin() {
         return login;
     }
+
 
     public void setLogin(String login) {
         this.login = login;
@@ -46,14 +45,22 @@ public class User {
         this.password = password;
     }
 
-    public LocalDateTime getDate() {
-        return date;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login ='" + login + '\'' +
+                ", password ='" + password + '\'' +
+                ", date =" + date +
+                '}';
     }
 
-    public void setDate(LocalDateTime date) {
-        this.date = date;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDate(java.sql.Timestamp timestamp) {
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
+
