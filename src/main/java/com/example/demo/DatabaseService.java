@@ -1,10 +1,13 @@
 package com.example.demo;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.server.ResponseStatusException;
 import java.sql.*;
 
+@Component
 public class DatabaseService {
     private final String url = "jdbc:postgresql://10.201.72.37:5432/pg_database";
     private final String username = "itguy";
@@ -28,6 +31,8 @@ public class DatabaseService {
                 String email = resultSet.getString("email");
                 Timestamp date = resultSet.getTimestamp("date");
                 return new Users(login, password, email, date);
+            } else {
+                throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
             }
 
         } catch (SQLException e) {

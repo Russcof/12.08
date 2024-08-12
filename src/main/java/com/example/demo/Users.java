@@ -19,19 +19,10 @@ public class Users {
         this.email = email;
         this.date = date;  }
 
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
 
     public String getLogin() {
         return login;
     }
-
 
     public void setLogin(String login) {
         this.login = login;
@@ -45,16 +36,6 @@ public class Users {
         this.password = password;
     }
 
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "login ='" + login + '\'' +
-                ", password ='" + password + '\'' +
-                ", date =" + date +
-                '}';
-    }
-
     public String getEmail() {
         return email;
     }
@@ -62,5 +43,25 @@ public class Users {
     public void setEmail(String email) {
         this.email = email;
     }
-}
 
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login ='" + login + '\'' +
+                ", password ='" + password + '\'' +
+                ", email ='" + email + '\'' +
+                ", date =" + date +
+                '}';
+
+    }
+
+}
